@@ -1,0 +1,23 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+# chrome
+driver = webdriver.Chrome(executable_path = "C:\chromedriver_win32\chromedriver.exe")
+
+driver.get("https://slcm.manipal.edu/")
+print(driver.title)
+print(driver.current_url)
+user = driver.find_element_by_name("txtUserid")
+pwd = driver.find_element_by_name("txtpassword")
+user.send_keys("170906118")
+pwd.send_keys("Bamlia73")
+
+driver.find_element_by_xpath("//*[@id='btnLogin']").click()
+
+
+driver.find_element_by_xpath("//a[@href='#3']").click()
+
+
+
+time.sleep(5)
+driver.quit()
